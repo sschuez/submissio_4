@@ -1,0 +1,4 @@
+<h1>Submissio ID: <%= @submissio.id %></h1>
+<p><%= @submissio.description_short %></p>
+
+<%= link_to "zur submissio", submissio_question_path(@submissio, Question.first) %>

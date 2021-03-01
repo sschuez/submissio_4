@@ -1,0 +1,9 @@
+<h1>submissios#index</h1>
+<ul>
+	<% @submissios.each do | submissio | %>
+		<li>
+			<%= submissio.description_short %>
+			<%= link_to "show", submissio_path(submissio) %>	
+			</li>
+	<% end %>
+</ul>
