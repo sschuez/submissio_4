@@ -1,0 +1,8 @@
+<ul>
+	<% @questions.each do | question | %>
+		<li>
+			<%= question.content %>
+			<%= link_to "show", question_path(question) %>	
+			</li>
+	<% end %>
+</ul>

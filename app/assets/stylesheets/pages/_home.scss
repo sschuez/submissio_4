@@ -1,1 +1,36 @@
 // Specific CSS for your home-page
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .main-background {
+  	padding: 12px; 
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .main-background {
+  	padding: 24px; 
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .main-background {
+  	padding: 36px; 
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .main-background {
+  	padding: 48px; 
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .main-background {
+  	padding: 64px; 
+  }
+}

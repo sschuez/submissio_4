@@ -1,0 +1,21 @@
+<h1><%= @question.content %></h1>
+<%# if @question.type == 'multiple_choice' %>
+	<%# @question.answer_options.each do |option| %>
+		<%#= simple_form_for [@question, @answer] do | f | %>
+			<%#= f.button :answer_option_id, content: option.id %>
+		  <%#= f.submit %>
+		<%# end %>	
+	<%# end %>
+<%# elsif  @question.type == 'regular' %>
+	<%= simple_form_for [@question, @answer] do | f | %>
+		<%= f.text_field :content %>
+		<% if @answer.errors.any? %>
+			<% @answer.errors.full_messages.each do |error| %>
+			<p><%= error %></p>
+			<% end %>
+		<% end %>
+	  <%= f.submit %>
+	<% end %>
+<%# end %>
+
+<%= link_to "Previous", question_answers_path(@previous_question)  %>
