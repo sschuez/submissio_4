@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :submissios, only: [ :index, :show ] do
+  resources :submissios, only: [ :index, :create, :show ] do
 	  resources :questions, only: [ :index, :show ] do
 	  	resources :answers, only: [ :create, :update ]
 	  end
