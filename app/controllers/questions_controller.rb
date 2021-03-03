@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   def index
-  	@questions = Question.all
+  	@questions = Question.order(:order)
   	@submissio = Submissio.find(params[:submissio_id])
   end
 

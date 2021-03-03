@@ -14,8 +14,7 @@
 		<%= f.input :content,
 					as: @question.question_type?,		
 					label: @question.content,
-					hint: "hint hint...",
-					input_html: {  } 
+					hint: "hint hint..."
 					%>
 		
 		<!-- Errors -->
@@ -26,13 +25,18 @@
 		<% end %>
 
 		<!-- Submit Button -->
+
+		<!-- Previous Button -->
+		<% if @question.previous_question.present? %>
+			<%= link_to "Previous", submissio_question_path(@submissio, @previous_question), class: "btn btn-secondary" %>
+		<% end %>
+
+		<!-- Next Button -->
 		<% if @question.next_question.nil? %>
 	  	<%= f.submit "Finish", class: "btn btn-success" %>
 	  <% else %>
 	  	<%= f.submit "Next", class: "btn btn-secondary" %>
 	 	<% end %>
-
+		
 	<% end %>
 <%# end %>
-
-<%#= link_to "Previous", submissio_question_answers_path(@previous_question)  %>
