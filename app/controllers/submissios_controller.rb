@@ -13,7 +13,7 @@ class SubmissiosController < ApplicationController
     @submissio = Submissio.new(submissio_params)
     @submissio.user = current_user
     if @submissio.save
-      flash[:success] = "Submissio successfully created"
+      flash[:notice] = "Submissio #{@submissio.description_short} successfully created"
       redirect_to submissios_path
     else
       flash[:error] = "Something went wrong"
