@@ -1,4 +1,5 @@
-<h1><%= @question.content %></h1>
+<h1>questions#show</h1>
+<br>
 <%# if @question.question_type == 'multiple_choice' %>
 	<%# @question.answer_options.each do |option| %>
 		<%#= simple_form_for [@question, @answer] do | f | %>
@@ -7,14 +8,30 @@
 		<%# end %>	
 	<%# end %>
 <%# elsif  @question.type == 'regular' %>
+
 	<%= simple_form_for [@submissio, @question, @answer] do | f | %>
-		<%= f.text_field :content %>
+		<!-- Input -->
+		<%= f.input :content,
+					as: @question.question_type?,		
+					label: @question.content,
+					hint: "hint hint...",
+					input_html: {  } 
+					%>
+		
+		<!-- Errors -->
 		<% if @answer.errors.any? %>
 			<% @answer.errors.full_messages.each do |error| %>
 			<p><%= error %></p>
 			<% end %>
 		<% end %>
-	  <%= f.submit %>
+
+		<!-- Submit Button -->
+		<% if @question.next_question.nil? %>
+	  	<%= f.submit "Finish", class: "btn btn-success" %>
+	  <% else %>
+	  	<%= f.submit "Next", class: "btn btn-secondary" %>
+	 	<% end %>
+
 	<% end %>
 <%# end %>
 

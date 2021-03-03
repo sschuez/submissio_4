@@ -10,8 +10,9 @@
 <br>
 
 <h4>Create a new submissio</h4>
-<%# Form to create new submissio w. Ajax %>
 <%= simple_form_for(@submissio) do |f| %>
+  <div class="form-group">
   <%= f.input :description_short, label: "Name/short description for your new submissio" %>
+  </div>
   <%= f.button :submit, class: "btn btn-secondary" %>
 <% end %>
