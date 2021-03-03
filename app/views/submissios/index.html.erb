@@ -2,8 +2,16 @@
 <ul>
 	<% @submissios.each do | submissio | %>
 		<li>
+			Id: <%= submissio.id %> - 
 			<%= submissio.description_short %> |
-			<%= link_to "show", submissio_path(submissio) %>	
+			<%= link_to "show", submissio_path(submissio) %> |
+			<%= link_to "delete", submissio_path(submissio), 
+					method: :delete,
+				  data: { confirm: "Are you sure you want to delete #{submissio.description_short}?" } #,
+				  # class: "btn" do %#>
+						# <i class="fas fa-trash-alt"></i>
+					# <% end %#> 
+					%>
 			</li>
 	<% end %>
 </ul>
