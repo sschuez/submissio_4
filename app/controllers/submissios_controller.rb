@@ -6,6 +6,7 @@ class SubmissiosController < ApplicationController
 
   def show
     @submissio = Submissio.find(params[:id])
+  	@questions = Question.order(:order)
   end
 
   def create
@@ -18,6 +19,13 @@ class SubmissiosController < ApplicationController
       flash[:error] = "Something went wrong"
       render 'new'
     end
+  end
+
+  def destroy
+  	@submissio = Submissio.find(params[:id])
+  	@submissio.destroy
+  	redirect_to submissios_path
+		flash[:notice] = "Submissio #{@submissio.description_short} has been deleted."
   end
 
   private

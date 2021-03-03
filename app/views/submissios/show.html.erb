@@ -1,4 +1,26 @@
 <h1>Submissio ID: <%= @submissio.id %></h1>
 <p><%= @submissio.description_short %></p>
 
-<%= link_to "to questions", submissio_question_path(@submissio, Question.first) %>
+<%= link_to "to submissio_questions", submissio_question_path(@submissio, Question.first) %>
+<br><br>
+
+<% if @submissio.answers.any? %>
+	<h4>Current state of your submission</h4>
+	<ul>
+		<% @questions.each do | question | %>
+			<li>
+				<%= question.content %> |
+				<% if @submissio.answers.find_by(question: question) %>
+					<%= @submissio.answers.find_by(question: question).content %> |
+				<% else %>
+					not yet answered |
+				<% end %>
+				<%= link_to "show", submissio_question_path(@submissio, question) %>	
+			</li>
+		<% end %>
+	</ul>
+<% else %>
+	<p>No submissio started yet</p>
+<% end %>
+
+<%= link_to "to submissios", submissios_path %>

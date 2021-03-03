@@ -33,4 +33,6 @@ class Question < ApplicationRecord
 			:string 
 		end
 	end
+
+	QUESTION_TYPES = [ "string", "text", "integer", "boolean", "radio_buttons", "check_boxes", "select",	"file", "date", "password" ]
 end
