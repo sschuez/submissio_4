@@ -1,5 +1,5 @@
 class Question < ApplicationRecord
-	has_many :answers
+	has_many :answers, dependent: :destroy
 
 	def next_question
 	  Question.where(order: self.order + 1).first
