@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_161807) do
+ActiveRecord::Schema.define(version: 2021_03_08_211534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,11 @@ ActiveRecord::Schema.define(version: 2021_03_01_161807) do
     t.integer "order"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "title", default: ""
+    t.text "moderation", default: ""
+    t.text "hint", default: ""
+    t.string "identifier", default: ""
+    t.boolean "input_hidden", default: false
   end
 
   create_table "submissios", force: :cascade do |t|

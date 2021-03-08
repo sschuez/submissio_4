@@ -1,5 +1,8 @@
 class Question < ApplicationRecord
 	has_many :answers, dependent: :destroy
+	validates :order, presence: true
+	validates :order, uniqueness: true
+	# validates :identifier, uniqueness: true
 
 	def next_question
 	  Question.where(order: self.order + 1).first
