@@ -38,6 +38,6 @@ class AnswersController < ApplicationController
 	end
 
 	def answer_params
-		params.require(:anwser).permit(:content)
+		params.require(:answer).permit(:content)
 	end
 end

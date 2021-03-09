@@ -22,14 +22,14 @@
 		<% end %>
 
 		<!-- Input -->
-		<% if @question.input_hidden %>
-			<% @answer.content = "" %>
-		<% else %>
+		<% if @question.input_hidden != true %>
 			<%= f.input :content,
 						as: @question.question_type?,		
 						label: @question.content,
 						hint: "hint hint..."
 						%>
+		<% else %>
+			<%= f.input :content, as: :hidden	%>
 		<% end %>
 		
 		<!-- Errors -->
