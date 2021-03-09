@@ -1,4 +1,4 @@
-<h1>questions#show</h1>
+<!-- <h1>questions#show</h1> -->
 <br>
 <%# if @question.question_type == 'multiple_choice' %>
 	<%# @question.answer_options.each do |option| %>
@@ -10,12 +10,27 @@
 <%# elsif  @question.type == 'regular' %>
 
 	<%= simple_form_for [@submissio, @question, @answer] do | f | %>
+		
+		<!-- Title -->
+		<% if @question.title.present? %>
+			<h1><%= @question.title %></h1>
+		<% end %>
+
+		<!-- Moderation -->
+		<% if @question.moderation.present? %>
+			<p><%= @question.moderation %></p>
+		<% end %>
+
 		<!-- Input -->
-		<%= f.input :content,
-					as: @question.question_type?,		
-					label: @question.content,
-					hint: "hint hint..."
-					%>
+		<% if @question.input_hidden %>
+			<% @answer.content = "" %>
+		<% else %>
+			<%= f.input :content,
+						as: @question.question_type?,		
+						label: @question.content,
+						hint: "hint hint..."
+						%>
+		<% end %>
 		
 		<!-- Errors -->
 		<% if @answer.errors.any? %>

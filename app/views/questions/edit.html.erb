@@ -10,7 +10,8 @@
 	</div>
 
 	<div class="form-group">
-		<%= f.input :moderation, 
+		<%= f.input :moderation,
+								as: :rich_text_area,
 								class: 'form-control', 
 								label: "Moderation before actual question", 
 								hint: "If empty, no moderation will appear" %> 

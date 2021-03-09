@@ -3,7 +3,8 @@
 <ul>
 	<% @questions.each do | question | %>
 		<li id="question-<%= question.id %>">
-			<%= question.content %> |
+			<%= question.order %>. |
+      <%= question.title %> |
 			<%= link_to "edit", edit_question_path(question) %>	
 			</li>
 	<% end %>

@@ -17,7 +17,7 @@ class QuestionsController < ApplicationController
   	@question = Question.new(question_params)
   	if @question.save
   		redirect_to questions_path(anchor: "question-#{@question.id}")
-  		flash[:notice] = "Created new question: #{@question.content}"
+  		flash[:notice] = "Created new question: #{@question.title}"
   	else
   		render :new
   	end
@@ -29,7 +29,7 @@ class QuestionsController < ApplicationController
   def update
     if @question.update(question_params)
       redirect_to questions_path(anchor: "question-#{@question.id}")
-      flash[:notice] = "Question #{@question.content} has been updated"
+      flash[:notice] = "Question #{@question.title} has been updated"
     else
       render :edit
     end
