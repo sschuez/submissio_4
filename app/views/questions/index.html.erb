@@ -2,9 +2,10 @@
 
 <ul>
 	<% @questions.each do | question | %>
-		<li>
-			<%= question.content %> |
-			<%= link_to "edit", question_path(question) %>	
+		<li id="question-<%= question.id %>">
+			<%= question.order %>. |
+      <%= question.title %> |
+			<%= link_to "edit", edit_question_path(question) %>	
 			</li>
 	<% end %>
 </ul>
@@ -25,7 +26,7 @@
   </div>
   <div class="form-group">
   	<%= f.input :question_type,
-  			label: "What's question type?",
+  			label: "What's the question type?",
   			collection: Question::QUESTION_TYPES,
   			as: :select %>
   </div>
