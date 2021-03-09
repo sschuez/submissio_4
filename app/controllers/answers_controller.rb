@@ -14,7 +14,6 @@ class AnswersController < ApplicationController
 
 	def update
 		@answer = @submissio.answers.find_by(question: @question)
-		# @answer.question = @question
 	  if @answer.update(answer_params)
 	    final_question?
 	  else
@@ -39,6 +38,6 @@ class AnswersController < ApplicationController
 	end
 
 	def answer_params
-		params.permit(:content) #removed params.require(:answer)
+		params.require(:anwser).permit(:content)
 	end
 end
