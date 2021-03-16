@@ -1,0 +1,44 @@
+.question-card {
+  // background-size: cover;
+  background-color: white;
+  // height: auto;
+  // align-items: center;
+  font-size: 18px;
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+  padding: 36px;
+  margin: 24px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .question-card {
+  }
+
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .question-card {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .question-card {
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .question-card {
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .question-card {
+  }
+}

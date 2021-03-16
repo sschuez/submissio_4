@@ -18,13 +18,6 @@
 	</div>
 
 	<div class="form-group">
-		<%= f.input :content, 
-								class: 'form-control', 
-								label: "Question content", 
-								hint: "This field is required" %> 
-	</div>
-	
-	<div class="form-group">
 		<%= f.input :question_type, 
 								class: 'form-control', 
 								label: "Question type",
@@ -33,6 +26,13 @@
 								hint: "Default is 'string', i.e. text field with limited number of characters" %>
 	</div>
 
+	<div class="form-group">
+		<%= f.input :content, 
+								class: 'form-control', 
+								label: "Question content", 
+								hint: "This field is required" %> 
+	</div>
+	
 	<div class="form-group">
 		<%= f.input :hint, 
 								class: 'form-control', 
@@ -60,7 +60,7 @@
 		<%= f.input :input_hidden, 
 								class: 'form-control', 
 								label: "Would you like to hide the input field", 
-								hint: "This need to be checked if you want to show text only",
+								hint: "This needs to be checked if you want to show text only",
 								as: :boolean %>
 	</div>
 	
