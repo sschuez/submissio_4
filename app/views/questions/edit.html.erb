@@ -6,7 +6,7 @@
 		<%= f.input :title, 
 								class: 'form-control', 
 								label: "Title of question page", 
-								hint: "If empty, not title will appear" %> 
+								hint: "If empty, no title will appear" %> 
 	</div>
 
 	<div class="form-group">
@@ -37,7 +37,6 @@
 		<%= f.input :hint, 
 								class: 'form-control', 
 								label: "Hint",
-								as: :select,
 								hint: "Any hint you will give will appear here" %>
 	</div>
 
@@ -45,8 +44,8 @@
 		<%= f.input :order, 
 								class: 'form-control', 
 								label: "Order", 
-								hint: "Danger! Dependancy with wizard logic",
-								as: :integer %>
+								as: :integer,
+								hint: "Danger! Dependancy with wizard logic" %>
 	</div>
 
 	<div class="form-group">
