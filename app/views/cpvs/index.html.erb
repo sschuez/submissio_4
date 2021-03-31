@@ -1,0 +1,20 @@
+<h1>cpvs#index</h1>
+<br>
+
+<%# Searchbar %>
+<%= form_tag cpvs_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a CPV - There are #{@cpvs.count} CPVs in the database"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+<br>
+
+<%# All CVPs %>
+<ul>
+  <% @cpvs.each do | cpv | %>
+    <li><%= cpv.number %> (<%= cpv.numstring %>) - <%= cpv.name %></li>
+  <% end %>
+</ul>

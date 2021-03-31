@@ -1,0 +1,2 @@
+class Cpv < ApplicationRecord
+end

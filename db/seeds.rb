@@ -168,60 +168,47 @@ questions = [
 ]
 
 # Orders and Inventories
-puts "Clearing all Answers, then Questions"
-Answer.destroy_all #if Rails.env == "DEVELOPMENT"
-Question.destroy_all #if Rails.env == "DEVELOPMENT"
+# puts "Clearing all Answers, then Questions"
+# Answer.destroy_all #if Rails.env == "DEVELOPMENT"
+# Question.destroy_all #if Rails.env == "DEVELOPMENT"
 
-questions.each_with_index do | question, index |
-		question_content = question.capitalize
-		question_content << "?"
-	Question.create!(
-		content: question_content,
-		order: index + 1
-		)
+# questions.each_with_index do | question, index |
+# 		question_content = question.capitalize
+# 		question_content << "?"
+# 	Question.create!(
+# 		content: question_content,
+# 		order: index + 1
+# 		)
+# end
+
+# puts "Created #{Question.all.count} questions."
+
+require_relative 'cpvs'
+require_relative 'cpvs_short'
+
+# def count_subarrays cpvs
+#   return 0 unless cpvs && cpvs.is_a?(Array)
+
+#   nested = cpvs.select { |e| e.is_a?(Array) }
+#   if nested.empty?
+#     1 # this is a leaf
+#   else
+#     nested.inject(0) { |sum, ary| sum + count_subarrays(ary) }
+#   end
+# end
+
+# puts count_subarrays
+
+# all_cpvs = $cpvs[1]
+
+puts $cpvs_short
+
+$cpvs_short.each do | number, name |
+	Cpv.create(
+		number: number,
+		numstring: number,
+		name: name
+	)
 end
 
-puts "Created #{Question.all.count} questions."
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+puts "Created #{Cpv.all.count} CPVs."

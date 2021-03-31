@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 	  end
 	end
 
+	resources :cpvs, only: [ :index ]
 	resources :questions, only: [ :index, :create, :edit, :update, :destroy ]
 
   root to: 'pages#home'
