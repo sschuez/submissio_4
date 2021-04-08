@@ -1,5 +1,9 @@
 <h1>home#submissi.o.</h1>
 
+<% if user_signed_in? %>
+  <p>Hello <%= current_user.email %></p>
+<% end %>
+
 <%= link_to "submissios", submissios_path %><br />
 <%= link_to "questions", questions_path %><br />
 <%= link_to "CPV Codes", cpvs_path %><br />

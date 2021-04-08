@@ -32,6 +32,7 @@ gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 
 gem 'omniauth-google-oauth2'
 gem 'omniauth'
+# gem 'omniauth-oauth2'
 gem 'activerecord-session_store'
 gem 'omniauth-rails_csrf_protection'
 

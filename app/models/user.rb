@@ -7,9 +7,21 @@ class User < ApplicationRecord
   has_many :submissios
 
   def self.create_from_provider_data(provider_data) 
-    where(provider: provider_data.provider, uid: provider_data.uid).first_or_create do |user|
-      user.email = provider_data.info.email
-      user.password = Devise.friendly_token[0, 20]
+   
+    data = provider_data.info
+    provider = provider_data.provider
+    uid = provider_data.uid
+    user = User.where(email: data['email']).first
+
+    unless user
+      user = User.create(#name: data['name'],
+          email: data['email'],
+          password: Devise.friendly_token[0,20],
+          uid: uid,
+          provider: provider
+      )
     end
+    user
   end
+
 end
