@@ -28,11 +28,12 @@ gem 'redis', '~> 4.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
-gem 'devise'
+gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 
 gem 'omniauth-google-oauth2'
 gem 'omniauth'
 gem 'activerecord-session_store'
+gem 'omniauth-rails_csrf_protection'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
