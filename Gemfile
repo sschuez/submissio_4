@@ -30,6 +30,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise'
 gem 'omniauth-google-oauth2'
+gem 'omniauth'
+gem 'activerecord-session_store'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
