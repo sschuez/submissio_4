@@ -1,0 +1,31 @@
+<div class="searchContainer my-3">
+	<div class="search card card-body rounded">
+
+		<h1>Your current form.io</h1>
+		<p class="lead">Enter a form Description URL:</p>
+		<input type="text" name="" id="searchForm" class="form-control" value="https://vfjxmgempuorlfo.form.io/submissiolive">
+		<br>
+		<input type="submit" id="submitForm" value="Search Form" class="btn btn-secondary">
+  	<br>
+
+  	<div>
+			<table style="table-layout: fixed; word-wrap: break-word;" class="table table-striped">
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">Label</th>
+			      <th scope="col">API</th>
+			      <th scope="col">Value Label</th>
+			      <th scope="col">Value</th>
+			      <th scope="col">Cust. Conditional</th>
+			    </tr>
+			  </thead>
+
+			  <tbody class="collection" id="form"></tbody>
+			</table>
+		</div>
+
+	</div>
+</div>
+
+<%= javascript_pack_tag 'formio' %>
