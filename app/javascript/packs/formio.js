@@ -29,7 +29,7 @@ function getFormIoContent() {
 						component.components.forEach((subcomponent) => {
 							if (subcomponent.values) {
 								subcomponent.values.forEach((value) => {
-									output += `<tr><th scope="row">${component.label}
+									output += `<tr><th scope="row">${component.title}
 											<td>${subcomponent.label}</td>
 											<td>${subcomponent.key}</td>
 											<td>${value.label}</td>
@@ -40,7 +40,7 @@ function getFormIoContent() {
 							} else {
 								output += `
 								<tr>
-									<th class="collection-item" scope="row">${component.label}</th>
+									<th class="collection-item" scope="row">${component.title}</th>
 									<td class="collection-item">${subcomponent.label}</td>
 									<td class="collection-item">${subcomponent.key}</td>
 									<td class="collection-item">n/a</td>
